@@ -26,3 +26,10 @@ Fraction=decorate_speak(Fraction)
 
 f1=Fraction()
 print(f1.speak('hello'))
+
+class Person:
+    pass
+
+Person=decorate_speak(Person)
+p=Person
+print(p.speak('this also works'))

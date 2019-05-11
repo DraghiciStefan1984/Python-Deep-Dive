@@ -20,6 +20,7 @@ def my_func(s):
     
 my_func('dumbass.')
 
+
 class MyClass:
     def __init__(self, a, b):
         self.a=a
@@ -30,9 +31,11 @@ class MyClass:
             print('decorated func called: a={0}, b={1}'.format(self.a, self.b))
             return fn(*args, **kwargs)
         return inner
+    
         
 obj=MyClass(33, 88)
 obj.__call__(100)
+
 
 @MyClass(10, 20)
 def my_func2(s):
