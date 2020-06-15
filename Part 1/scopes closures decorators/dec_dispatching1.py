@@ -58,16 +58,22 @@ def htmlize2(arg):
 def singledispatch(fn):
     registry={}
     registry[object]=fn
-    registry[int]=lambda a: f'{a}(<li>{str(hex(int(a)))}</li>)'
-    registry[str]=lambda s: escape(s).replace('\n', '<br/>\n')
 
-    def inner(arg):
-        return registry[object](arg)
+    def decorated(arg):
+        return registry.get(type(arg), registry[object])
 
-    return inner
+    def register(type_):
+        def inner(fn):
+            registry[type_]=fn
+            return fn
+        return inner
+
+    decorated.register=register
+
+    return decorated
 
 @singledispatch
 def htmlize(a):
     return escape(str(a))
 
-print(htmlize('1<100'))
+print(htmlize.register('1<100'))
