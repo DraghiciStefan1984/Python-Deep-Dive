@@ -11,6 +11,9 @@ class Program:
     language='Python'
     version=3.6
 
+    def say_hello():
+        print(f'hello from {Program.language}.')
+
 print(Program.language)
 print(Program.version)
 
@@ -32,3 +35,11 @@ print(Program.__dict__)
 # Program.__dict__['version']=4.0
 # print(Program.__dict__)
 print(Program.__dict__['language'] is not None)
+
+Program.say_hello()
+Program.__dict__['say_hello']()
+getattr(Program, 'say_hello')()
+
+p=Program()
+# p.say_hello()
+print(isinstance(p, Program))
