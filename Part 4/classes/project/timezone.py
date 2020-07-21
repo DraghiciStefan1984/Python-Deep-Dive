@@ -42,6 +42,4 @@ class TimeZone:
                 self._offset_minutes==other._offset_minutes)
 
     def __repr__(self):
-        return (f"TimeZone(name='{self.name}'), 
-                offset_hours={self.offset_hours}, 
-                offset_minutes={self.offset_minutes}")
+        return (f'TimeZone (name={self.name}, offset_hours={self.offset_hours}, offset_minutes={self.offset_minutes}')
