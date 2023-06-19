@@ -19,3 +19,13 @@ b = None
 print(ref_count(id(a)))
 a = None
 print(ref_count(id(a)))
+
+
+a = "hello"
+print("pointer a is referencing a variable of type: " + str(type(a)))
+a = True
+print("pointer a is referencing a variable of type: " + str(type(a)))
+a = 4
+print("pointer a is referencing a variable of type: " + str(type(a)))
+a = 3.45
+print("pointer a is referencing a variable of type: " + str(type(a)))
