@@ -27,3 +27,24 @@ def avg(*args):
 
 print(avg(34, 78))
 print(avg(4,5,5,6,7,5,7,6,5,7,5,7))
+
+
+def func(a, b, *c, d):
+    print(a, b, c, d)
+
+func(1, 2, 3, 4, 5, d=6)
+
+
+def func(**kwargs):
+    print(kwargs)
+
+func(a=1, b=2, c=3)
+
+
+def func(a, b, *, d, **kwargs):
+    print(a)
+    print(b)
+    print(d)
+    print(kwargs)
+
+func(1, 2, x=100, y=200, d=20)
