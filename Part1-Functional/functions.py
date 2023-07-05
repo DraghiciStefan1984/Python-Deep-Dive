@@ -24,3 +24,12 @@ def apply_func(fn, *args, **kwargs):
     fn(*args, **kwargs)
 
 print(apply_func(sq, 4))
+
+
+l1 = [2,3,5,4,6,7]
+l2 = ['a', 'U', 's', 'X', 'e']
+print(sorted(l2, key=lambda s: s.upper()))
+
+d = {'ghi': 1, 'abc': 5, 'def': 5}
+print(sorted(d))
+print(sorted(d, key=lambda e: d[e]))
