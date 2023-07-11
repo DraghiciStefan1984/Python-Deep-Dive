@@ -77,3 +77,15 @@ def fibo_loop(n):
     return fib2
 
 fibo_loop(5)
+
+
+from functools import reduce
+
+@timed
+def fibo_reduce(n):
+    initial = (1, 0)
+    dummy = range(n)
+    fib_n = reduce(lambda prev, n: (prev[0] + prev[1], prev[0]), dummy, initial)
+    return fib_n[0]
+
+fibo_reduce(5)
